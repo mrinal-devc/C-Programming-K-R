@@ -10,33 +10,39 @@
  * ------
  * Chanda
 ***/
-#include<stdio.h>
+#include <stdio.h>
 
-main()
+int main()
 {
     int c;
-    char freq[128];
-    for(int i=0;i<128;i++)
+    int freq[128];
+    for(int i = 0; i < 128; i++)
     {
         freq[i] = 0;
     }
-    while((c = getchar()) != EOF)
+    while((c =getchar()) != EOF)
     {
-        if(c == '\n')
+        if(c == '\n' || c == '\t' || c == ' ')
         {
             ;
         }
         else
+        freq[c]++;
+    }
+    int hist(int a)
+    {
+        for(int i =0;i < a; i++)
         {
-            freq[c]++;
+            printf("* ");
         }
     }
-    for(int i = 0;i< 128;i++)
+    for(int i = 0; i < 128; i++)
     {
         if(freq[i] != 0)
         {
-            printf("\n%c = %d",i,freq[i]);
+            printf("%c = %d\t",i,freq[i]);
+            printf("\t%c\n",hist(freq[i]));
         }
     }
-
+    
 }
