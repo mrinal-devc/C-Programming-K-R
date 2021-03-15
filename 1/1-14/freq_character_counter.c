@@ -11,7 +11,6 @@
  * Chanda
 ***/
 #include <stdio.h>
-
 int main()
 {
     int c;
@@ -44,5 +43,4 @@ int main()
             printf("\t%c\n",hist(freq[i]));
         }
     }
-    
 }
